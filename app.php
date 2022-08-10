@@ -3,6 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use App\Ykt;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -59,7 +60,7 @@ function now() {
                 $totalTime = $article['totalTime'];
                 $videoPlayTime = 1;
 
-                $bar = $output->createProgressBar($totalTime);
+                $bar = new ProgressBar($output, $totalTime);
                 $bar->start();
 
                 do {
