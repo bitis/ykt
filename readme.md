@@ -2,9 +2,10 @@
 
 正福易考通课程自动学习并自动回答随堂小考。
 
+
 ## 用法
 
-假设您已经安装了 [PHP](https://www.php.net/downloads) 和 [Composer](https://getcomposer.org/download/) ；
+假设您已经安装了 [PHP (Version >= 7.4)](https://www.php.net/downloads) 和 [Composer](https://getcomposer.org/download/) ；
 
 * 克隆代码
 
