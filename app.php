@@ -45,9 +45,10 @@ function now() {
                 $answerStatus = $article['questionFinishCount'] . '/' . $article['questionTotalCount'];
 
                 $dataId = $article['onlineDataId'];
+
                 $hasQuestion = ($article['questionFinishCount'] - $article['questionTotalCount']);
 
-                $questionList = $ekt->onlineVideo($onlineClassId, $onlineColumnId, $dataId);
+                $questionList = $ekt->onlineVideo($onlineClassId, $onlineColumnId, $dataId, $article['isOptionalVideo']);
 
                 $output->writeln(now() . "\t" . $article['articleTitle']
                     . "(时长：" . $article['totalTime'] . "s)" . "\t" . "播放: " . $playStatus . "\t 答题：" . $answerStatus);

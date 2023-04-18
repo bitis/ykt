@@ -47,7 +47,7 @@ class Ykt
      */
     public function onlineAnswer($onlineClassId, $onlineColumnId, $onlineDataId, $questionId, $anchorId, $userAnswer)
     {
-        return $this->request('/ykt_java//study/monitorProcess', compact('onlineClassId',
+        return $this->request('/ykt_java/study/onlineAnswer', compact('onlineClassId',
             'onlineColumnId', 'onlineDataId', 'questionId', 'anchorId', 'userAnswer'))['resMessage'];
     }
 
@@ -59,10 +59,10 @@ class Ykt
      * @param $onlineDataId
      * @return mixed
      */
-    public function onlineVideo($onlineClassId, $onlineColumnId, $onlineDataId)
+    public function onlineVideo($onlineClassId, $onlineColumnId, $onlineDataId, $isOptionalCourse = 0)
     {
-        return $this->request('/ykt_java//study/onlineVideo', compact('onlineClassId',
-            'onlineColumnId', 'onlineDataId'))['resData']['questionList'];
+        return $this->request('/ykt_java/study/onlineVideo', compact('onlineClassId',
+            'onlineColumnId', 'onlineDataId', 'isOptionalCourse'))['resData']['questionList'];
     }
 
     /**
@@ -73,7 +73,7 @@ class Ykt
      */
     public function listColumn($onlineClassId)
     {
-        return $this->request('/ykt_java//study/listColumn', compact('onlineClassId'))['resData']['columnList'];
+        return $this->request('/ykt_java/study/listColumn', compact('onlineClassId'))['resData']['columnList'];
     }
 
     /**
@@ -85,7 +85,7 @@ class Ykt
      */
     public function listDataArticle($onlineClassId, $onlineColumnId)
     {
-        return $this->request('/ykt_java//study/listDataArticle',
+        return $this->request('/ykt_java/study/listDataArticle',
             compact('onlineClassId', 'onlineColumnId'))['resData']['dataArticleList'];
     }
 
@@ -102,7 +102,7 @@ class Ykt
      */
     public function monitorProcess($onlineClassId, $onlineColumnId, $videoId, $videoPlayTime, $monitorInterval)
     {
-        return $this->request('/ykt_java//study/monitorProcess', compact('onlineClassId',
+        return $this->request('/ykt_java/study/monitorProcess', compact('onlineClassId',
             'onlineColumnId', 'videoId', 'videoPlayTime', 'monitorInterval'));
     }
 
